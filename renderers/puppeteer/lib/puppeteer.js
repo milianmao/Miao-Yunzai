@@ -28,11 +28,14 @@ export default class Puppeteer extends Renderer {
     this.renderNum = 0
     this.config = {
       headless: Data.def(config.headless, true),
+      // headless: false,
       args: Data.def(config.args, [
         '--disable-gpu',
         '--disable-setuid-sandbox',
         '--no-sandbox',
-        '--no-zygote'
+        '--no-zygote',
+        '--remote-debugging-port=9222',
+        '--auto-open-devtools-for-tabs'
       ])
     }
     if (config.chromiumPath || cfg?.bot?.chromium_path) {

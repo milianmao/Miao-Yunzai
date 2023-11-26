@@ -63,7 +63,6 @@ export class user extends plugin {
         }
       ]
     })
-    this.User = new User(e)
   }
 
   async init () {
